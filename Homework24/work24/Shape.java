@@ -6,9 +6,11 @@ public abstract class Shape implements Drawable, Comparable, Cloneable {
     public Shape(String color) {
         this.color = color;
     }
-    public Shape(Shape objshape) {
-        this.color = objshape.getColor();
-    }
+
+//    public Shape(Shape objshape) {
+//        this.color = objshape.getColor();
+//    }
+
     public String getColor() {
         return color;
     }
