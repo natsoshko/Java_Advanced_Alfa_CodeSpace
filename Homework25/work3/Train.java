@@ -52,13 +52,6 @@ public class Train {
         this.days = days;
     }
 
-    //    public DaysOfWeek getDays() {
-//        return days;
-//    }
-//    public void setDays(DaysOfWeek days) {
-//        this.days = days;
-//    }
-
     @Override
     public String toString() {
         String sRes = "Train number = " + number +
@@ -77,12 +70,5 @@ public class Train {
             idays++;
         }
         return sRes;
-//        return "Train: " +
-//                "number = " + number +
-//                ", stationDispatch = " + stationDispatch +
-//                ", stationArrival = " + stationArrival +
-//                ", timeDispatch = " + timeDispatch +
-//                ", timeArrival = " + timeArrival +
-//                ", days = " + DaysOfWeek.values();
     }
 }

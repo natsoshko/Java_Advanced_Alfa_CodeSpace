@@ -16,13 +16,11 @@ public class TrainSchedule {
         this.trainsArr = trainsArr;
     }
 
-    //public void addTrain (Train curTrain, String sDisp, String sArriv, String sTimeD, String sTimeA, String sDaysD) {
     public void addTrain (Train curTrain, String sDisp, String sArriv, String sTimeD, String sTimeA, DaysOfWeek [] sDaysD) {
         curTrain.setStationDispatch(sDisp);
         curTrain.setStationArrival(sArriv);
         curTrain.setTimeDispatch(sTimeD);
         curTrain.setTimeArrival(sTimeA);
-        //curTrain.setDays(DaysOfWeek.valueOf(sDaysD.toUpperCase()));
         curTrain.setDays(sDaysD);
 
         if (iCount < trainsArr.length)
@@ -47,30 +45,9 @@ public class TrainSchedule {
                     }
                 }
             }
-            if (!bSearch) {
-                System.out.println("Trains not found");
-            }
-
+        }
+        if (!bSearch) {
+            System.out.println("Trains not found");
         }
     }
-
-    // 1 day enum
-//    public void searchTrains (String searchArrivalStation, String searchDayDispatch) {
-//        boolean bSearch = false;
-//        for (Train trArr : trainsArr) {
-//            if (trArr.getStationArrival().equals(searchArrivalStation)) {
-//                if (trArr.getDays().name().equalsIgnoreCase(searchDayDispatch)) {
-//                    bSearch = true;
-//                    System.out.println(trArr);
-//                }
-//            }
-//            if (!bSearch) {
-//                System.out.println("Trains not found");
-//            }
-//
-//        }
-//    }
-
-
-
 }
