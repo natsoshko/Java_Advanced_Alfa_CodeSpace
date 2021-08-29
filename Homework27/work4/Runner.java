@@ -2,7 +2,7 @@ package com.alfabank.work4;
 
 public class Runner {
     public void run() {
-        System.out.println("--- Main class ---");
+        System.out.println("\n--- Main class ---");
         MyTestClass test = new MyTestClass();
         test.test();
 

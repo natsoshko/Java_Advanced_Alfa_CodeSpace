@@ -4,7 +4,7 @@ public class MyTestClass {
     private String str1 = "This is str in MyTestClass.";
     public void test() {
         System.out.println("This is test() from MyTestClass: " + str1);
-        System.out.println("Call localMethod() from MyTestClass:");
+        System.out.print("Call localMethod() from MyTestClass:");
         localMethod();
 
     }
@@ -20,7 +20,7 @@ public class MyTestClass {
             System.out.println("Call str in MyTestClass from MyStaticNested: " + mytest.str1);
             MyTestClass.MyInner inn = mytest.new MyInner();
             System.out.println("Call str in MyInner from MyStaticNested: " + inn.getStr2());
-            System.out.println("Call localMethod() from MyStaticNested:");
+            System.out.print("Call localMethod() from MyStaticNested:");
             mytest.localMethod();
         }
     }
@@ -36,7 +36,7 @@ public class MyTestClass {
             System.out.println("Call str in MyTestClass from MyInner: " + MyTestClass.this.str1);
             MyTestClass.MyStaticNested statnest = new MyStaticNested();
             System.out.println("Call str in MyStaticNested from MyInner: " + statnest.getStr3());
-            System.out.println("Call str in MyLocal from MyInner:");
+            System.out.print("Call str in MyLocal from MyInner:");
             localMethod();
         }
     }
