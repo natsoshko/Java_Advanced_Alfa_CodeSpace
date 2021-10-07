@@ -44,4 +44,14 @@ public class ViewBooks {
         return input.inputSearchAuthor();
     }
 
+    public String getSearchPublisher() {
+        System.out.println(ViewConstants.ENTER_PUBLISHER);
+        return input.inputSearchPublisher();
+    }
+
+    public String getSearchYear() {
+        System.out.println(ViewConstants.ENTER_YEAR_BOOKS);
+        return input.inputSearchYear();
+    }
+
 }

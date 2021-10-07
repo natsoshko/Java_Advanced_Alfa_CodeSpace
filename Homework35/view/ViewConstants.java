@@ -13,4 +13,8 @@ public class ViewConstants {
     public static final String ERROR_IDBOOK = "Id Book is out of range";
     public static final String ENTER_AUTHOR = "Enter Author:";
     public static final String ERROR_AUTHOR = "Author doesn't exists in BD!";
+    public static final String ENTER_PUBLISHER = "Enter Publisher:";
+    public static final String ERROR_PUBLISHER = "Publisher doesn't exists in BD!";
+    public static final String ENTER_YEAR_BOOKS = "Enter year:";
+    public static final String ERROR_YEAR_BOOKS = "Books by search year doesn't exists in BD!";
 }

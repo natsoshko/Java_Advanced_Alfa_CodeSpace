@@ -6,7 +6,6 @@ import com.alfabank.model.entity.Book;
 import com.alfabank.view.ViewBooks;
 import com.alfabank.view.ViewConstants;
 
-import java.util.ArrayList;
 import java.util.List;
 
 public class ControllerBooks {
@@ -22,8 +21,8 @@ public class ControllerBooks {
                 case "add": proccessedAdd(); break;
                 case "edit": processedEdit(); break;
                 case "author": processedSearchAuthor(); break;
-                case "publisher": break;
-                case "year": break;
+                case "publisher": processedSearchPublisher(); break;
+                case "year": processedSearchYear(); break;
                 case "exit": System.exit(1);
                 default: viewBooks.printMessage(ViewConstants.ERROR);
             }
@@ -76,15 +75,45 @@ public class ControllerBooks {
     private void processedSearchAuthor() {
         String srcAuthor = viewBooks.getSearchAuthor();
         try {
-            ArrayList<Book> arrSearchAuth = serviceBooks.searchAuthor(srcAuthor);
+            List<Book> arrSearchAuth = serviceBooks.searchByAuthor(srcAuthor);
             Boolean bSize = false;
-            bSize = Validator.checkSizeArrAuthor(arrSearchAuth);
+            bSize = Validator.checkSizeArr(arrSearchAuth);
             if (bSize) {
                 viewBooks.printBooks(ConverterBooks.convert(arrSearchAuth));
             }
         } catch (NullPointerException exp) {
             viewBooks.printMessage(ViewConstants.ERROR_AUTHOR);
         }
+    }
 
+    private void processedSearchPublisher() {
+        String srcPublish = viewBooks.getSearchPublisher();
+        try {
+            List<Book> arrSearchPubl = serviceBooks.searchByPublisher(srcPublish);
+            Boolean bSize = false;
+            bSize = Validator.checkSizeArr(arrSearchPubl);
+            if (bSize) {
+                viewBooks.printBooks(ConverterBooks.convert(arrSearchPubl));
+            }
+        } catch (NullPointerException exp) {
+            viewBooks.printMessage(ViewConstants.ERROR_PUBLISHER);
+        }
+    }
+
+    private void processedSearchYear() {
+        try {
+            String srcYearBooks = viewBooks.getSearchYear();
+            int year = Validator.checkYear(viewBooks.getSearchYear());
+            List<Book> arrSearchBooks = serviceBooks.searchByYear(Integer.parseInt(srcYearBooks));
+            Boolean bSize = false;
+            bSize = Validator.checkSizeArr(arrSearchBooks);
+            if (bSize) {
+                viewBooks.printBooks(ConverterBooks.convert(arrSearchBooks));
+            }
+        } catch (IllegalArgumentException exp) {
+            viewBooks.printMessage(ViewConstants.ERROR_YEAR);
+        } catch (NullPointerException exp) {
+            viewBooks.printMessage(ViewConstants.ERROR_YEAR_BOOKS);
+        }
     }
 }

@@ -20,7 +20,6 @@ public class ServiceBooks {
     }
 
     public void editCostBook(int indexBook, int ipercent, String sAction) {
-        //oldPrice + (oldPrice/100*pricePercent)
         if (sAction.equals("increase")) {
             books.get(indexBook).setCost(books.get(indexBook).getCost() + books.get(indexBook).getCost() * ipercent / 100);
         } else if (sAction.equals("decrease")) {
@@ -28,14 +27,34 @@ public class ServiceBooks {
         }
     }
 
-    public ArrayList <Book> searchAuthor(String findAuthor) {
-        ArrayList <Book> arrAuth = new ArrayList<>();
+    public List <Book> searchByAuthor(String findAuthor) {
+        List <Book> arrAuth = new ArrayList<>();
         for (Book book : books) {
             if (book.getAuthor().toLowerCase().equals(findAuthor.toLowerCase())) {
                 arrAuth.add(book);
             }
         }
         return arrAuth;
+    }
+
+    public List <Book> searchByPublisher(String findPublish) {
+        List <Book> arrPub = new ArrayList<>();
+        for (Book book : books) {
+            if (book.getPulisher().toLowerCase().equals(findPublish.toLowerCase())) {
+                arrPub.add(book);
+            }
+        }
+        return arrPub;
+    }
+
+    public List <Book> searchByYear(int findYear) {
+        List <Book> arrYears = new ArrayList<>();
+        for (Book book : books) {
+            if (book.getYear() >= findYear) {
+                arrYears.add(book);
+            }
+        }
+        return arrYears;
     }
 
 }

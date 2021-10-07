@@ -1,8 +1,7 @@
 package com.alfabank.controller;
 
 import com.alfabank.model.entity.Book;
-
-import java.util.ArrayList;
+import java.util.List;
 
 public class Validator {
     public static int checkYear(String year) {
@@ -46,9 +45,9 @@ public class Validator {
         return iId;
     }
 
-    public static Boolean checkSizeArrAuthor(ArrayList<Book> arr) {
+    public static Boolean checkSizeArr(List <Book> arr) {
         if (arr.size() == 0) {
-            throw new NullPointerException("Array_length_zero");
+            throw new NullPointerException("ARRAY_LENGTH_ZERO");
         }
         return true;
     }
