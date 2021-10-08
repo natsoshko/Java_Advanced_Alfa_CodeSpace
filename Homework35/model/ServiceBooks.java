@@ -29,31 +29,36 @@ public class ServiceBooks {
 
     public List <Book> searchByAuthor(String findAuthor) {
         List <Book> arrAuth = new ArrayList<>();
-        for (Book book : books) {
-            if (book.getAuthor().toLowerCase().equals(findAuthor.toLowerCase())) {
+        books.forEach(book -> {
+            if (book.getAuthor().equalsIgnoreCase(findAuthor)) {
                 arrAuth.add(book);
             }
-        }
+        });
+//        for (Book book : books) {
+//            if (book.getAuthor().toLowerCase().equals(findAuthor.toLowerCase())) {
+//                arrAuth.add(book);
+//            }
+//        }
         return arrAuth;
     }
 
     public List <Book> searchByPublisher(String findPublish) {
         List <Book> arrPub = new ArrayList<>();
-        for (Book book : books) {
-            if (book.getPulisher().toLowerCase().equals(findPublish.toLowerCase())) {
+        books.forEach(book -> {
+            if (book.getPulisher().equalsIgnoreCase(findPublish)) {
                 arrPub.add(book);
             }
-        }
+        });
         return arrPub;
     }
 
     public List <Book> searchByYear(int findYear) {
         List <Book> arrYears = new ArrayList<>();
-        for (Book book : books) {
+        books.forEach(book -> {
             if (book.getYear() >= findYear) {
                 arrYears.add(book);
             }
-        }
+        });
         return arrYears;
     }
 
